@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This class represents the core of french "Affichage environnemental" package.
+ * This class represents the core of Affichage package.
  *
  * (c) Altermaker <contact@altermaker.com>
  *
