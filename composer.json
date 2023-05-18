@@ -1,0 +1,21 @@
+{
+    "name": "altermaker/affichage",
+    "description": "Génération d'un affichage environnemental français conforme à la charte graphique officielle",
+    "keywords": ["affichage environnemental", "french labelling"],
+    "homepage": "https://github.com/Florian-Altermaker/affichage-environnemental",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Altermaker",
+            "email": "contact@altermaker.com",
+            "homepage": "https://altermaker.com/"
+        }
+    ],
+    "require": {
+        "php": ">=8.1"
+    },
+    "autoload": {
+        "psr-4": { "Altermaker\\Affichage\\": "src/Affichage" }
+    }
+}
