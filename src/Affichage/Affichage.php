@@ -50,6 +50,23 @@ class Affichage
     }
 
     /**
+     * Generate the label image as an HTML block
+     * 
+     */
+    public function htmlLabel() : string
+    {
+        $height = 150;
+
+        ob_start();
+
+        include_once('assets/template-a3-range.php');
+
+        $html = ob_get_clean();
+
+        return $html;
+    }
+
+    /**
      * Set score as a letter
      *
      * @param string  $scoreLetter  The result expressed as a letter
