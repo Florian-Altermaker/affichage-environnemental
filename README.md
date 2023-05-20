@@ -42,7 +42,7 @@ Deux méthodes sont disponibles pour définir le score en indice ou en lettre.
 $affichage->setScoreLetter('A');
 
 // La méthode setScoreIndex() accepte une veleur numérique
-$affichage->setScoreIndex();
+$affichage->setScoreIndex(1137);
 ```
 
 Un indice n'étant pas un entier est toujours arrondi à une décimale.
@@ -101,11 +101,24 @@ Si besoin, il est aussi possible de récupérer le contenu généré en HTML dan
 $affichage->htmlLabel();
 ```
 
+## Exemple
+
+Le code ci-dessous affichera un visuel de 200px de hauteur suivant les règles de la variante A1 au format "Letter" pour un score déclaré de "A".
+
+```php
+<?php
+
+use Altermaker\Affichage\Affichage;
+
+$affichage = new Affichage();
+$affichage->setVariant('a1')->setFormat('letter')->setLabelHeight(200)->setScoreLetter('A')printLabel();
+```
+
 ## À propos
 
 ### Prérequis
 
-- Le package Affichage `^1.0` fonctionne avec PHP 8.1 ou plus.
+Le package Affichage `^1.0` fonctionne avec PHP 8.1 ou plus.
 
 ### Support
 
