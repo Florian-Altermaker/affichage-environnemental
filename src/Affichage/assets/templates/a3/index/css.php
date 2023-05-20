@@ -26,8 +26,8 @@
     content: '';
     display: inline-block;
     background-color: #106192;
-    min-width: 100%;
-    width: 100%;
+    min-width: 102%;
+    width: 102%;
     min-height: <?= $this->labelHeight*0.58 ?>px;
     height: <?= $this->labelHeight*0.58 ?>px;
     border-radius: <?= $this->labelHeight/6 ?>px;
@@ -46,14 +46,13 @@
 
 .a3-index .label .info div:last-of-type {
     flex-grow: 1;
-
     color: white;
     font-family: 'Roboto', arial, sans-serif;
     font-weight: bold;
     font-size: <?= $this->labelHeight*0.51 ?>px;
     line-height: 0.9em;
     position: relative;
-    text-align: left;
+    text-align: center;
     z-index: 1;
 }
 
@@ -65,7 +64,7 @@
     color: #106192;
     height: <?= $this->labelHeight*0.59 ?>px;
     padding: <?= $this->labelHeight/80 ?>px 0px 0px;
-    margin: <?= $this->labelHeight*0.43 ?>px 0px 0px <?= $this->labelHeight*0.1 ?>px;
+    margin: <?= $this->labelHeight*0.43 ?>px 0px 0px <?= $this->labelHeight*0.12 ?>px;
     box-sizing: border-box;
     text-align: left;
 }

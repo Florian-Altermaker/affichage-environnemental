@@ -18,8 +18,8 @@
     content: '';
     display: inline-block;
     background-color: #106192;
-    min-width: 100%;
-    width: 100%;
+    min-width: 102%;
+    width: 102%;
     min-height: <?= $this->labelHeight*0.63 ?>px;
     height: <?= $this->labelHeight*0.63 ?>px;
     border-radius: <?= $this->labelHeight/7 ?>px;
@@ -44,6 +44,6 @@
     font-size: <?= $this->labelHeight*0.54 ?>px;
     line-height: 0.9em;
     position: relative;
-    text-align: left;
+    text-align: center;
     z-index: 1;
 }

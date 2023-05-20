@@ -55,7 +55,7 @@ class Affichage
     /**
      * Score as an index
      */
-    protected float $scoreIndex = 0;
+    protected string $scoreIndex = '0';
 
     /**
      * Format
@@ -84,7 +84,7 @@ class Affichage
      * Generate the label image as an HTML block
      * 
      */
-    public function htmlLabel() : string
+    public function htmlLabel(): string
     {
         ob_start();
 
@@ -95,6 +95,13 @@ class Affichage
         $html = ob_get_clean();
 
         return $html;
+    }
+
+    public function printLabel()
+    {
+        echo $this->htmlLabel();
+        
+        return $this;
     }
 
     // ------------------------------------------------------------------------
@@ -123,13 +130,13 @@ class Affichage
      *
      * @param float  $scoreIndex  The result expressed as a numeric index
      */
-    public function setScoreIndex(float $scoreIndex)
+    public function setScoreIndex($scoreIndex)
     {
         if (!is_numeric($scoreIndex)) {
             throw new Exception('This is not a valid score as an index. The index must be numeric.');
         }
 
-        $this->scoreIndex = $scoreIndex;
+        $this->scoreIndex = !is_int($scoreIndex) ? number_format($scoreIndex, 1, ',', '') : number_format($scoreIndex, 0, ',', '');
 
         return $this;        
     }

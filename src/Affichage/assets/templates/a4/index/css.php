@@ -53,7 +53,7 @@
     font-size: <?= $this->labelHeight*0.51 ?>px;
     line-height: 0.9em;
     position: relative;
-    text-align: left;
+    text-align: center;
     z-index: 1;
 }
 
