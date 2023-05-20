@@ -103,7 +103,7 @@ $affichage->htmlLabel();
 
 ## Exemple
 
-Le code ci-dessous affichera un visuel de 200px de hauteur suivant les règles de la variante A1 au format "Letter" pour un score déclaré de "A".
+Le code ci-dessous affichera un visuel de 200px de hauteur suivant les règles de la variante A1 au format "Lettre" pour un score déclaré de "A".
 
 ```php
 <?php
@@ -111,7 +111,7 @@ Le code ci-dessous affichera un visuel de 200px de hauteur suivant les règles d
 use Altermaker\Affichage\Affichage;
 
 $affichage = new Affichage();
-$affichage->setVariant('a1')->setFormat('letter')->setLabelHeight(200)->setScoreLetter('A')printLabel();
+$affichage->setVariant('a1')->setFormat('letter')->setLabelHeight(200)->setScoreLetter('A')->printLabel();
 ```
 
 ## À propos
