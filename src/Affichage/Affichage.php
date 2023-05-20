@@ -24,30 +24,61 @@ namespace Altermaker\Affichage;
 class Affichage
 {
 
+    // ------------------------------------------------------------------------
+    // PARAMETERS
+
+    /**
+     * Official mention
+     */
+    protected const OFFICIAL_MENTION = "IMPACT ENVIRONNEMENTAL";
+    
     /**
      * List of allowed letters
      */
     protected const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
     /**
+     * List of allowed formats
+     */
+    protected const FORMATS = ['letter', 'range', 'index'];
+    
+    /**
+     * List of allowed variants
+     */
+    protected const VARIANTS = ['a1', 'a2', 'a3', 'a4', 'c'];    
+
+    /**
      * Score as a letter
      */
-    protected string $scoreLetter;
+    protected string $scoreLetter = 'E';
 
     /**
      * Score as an index
      */
-    protected float $scoreIndex;
+    protected float $scoreIndex = 0;
 
     /**
-     * @param string  $scoreLetter  The result expressed as a letter
-     * @param float   $scoreIndex   The result expressed as a numeric index
+     * Format
      */
-    public function __construct(string $scoreLetter, float $scoreIndex)
-    {
-        $this->setScoreLetter($scoreLetter);
-        $this->setScoreIndex($scoreIndex);
-    }
+    protected string $format = 'range';
+    
+    /**
+     * Variant
+     */
+    protected string $variant = 'a3';
+
+    /**
+     * Label height
+     */
+    protected int $labelHeight = 100;
+
+    // ------------------------------------------------------------------------
+    // METHODS
+
+    /**
+     * By default, constructor do not set any default value
+     */
+    public function __construct(){}
 
     /**
      * Generate the label image as an HTML block
@@ -55,16 +86,19 @@ class Affichage
      */
     public function htmlLabel() : string
     {
-        $height = 150;
-
         ob_start();
 
-        include_once('assets/template-a3-range.php');
+        include('assets/templates/'.$this->variant.'/'.$this->format.'/html.php');
+
+        include('assets/style.php');
 
         $html = ob_get_clean();
 
         return $html;
     }
+
+    // ------------------------------------------------------------------------
+    // SETTERS
 
     /**
      * Set score as a letter
@@ -76,17 +110,18 @@ class Affichage
         $scoreLetter = strtoupper($scoreLetter);
         
         if (!in_array($scoreLetter, self::LETTERS)) {
-            throw new Exception('This is not a valid score as a letter. Allowed values are:'.explode(', ', self::LETTERS));
+            throw new Exception('This is not a valid score as a letter. Allowed values are: '.implode(', ', self::LETTERS));
         }
 
         $this->scoreLetter = $scoreLetter;
-        
+
+        return $this;        
     }
 
     /**
      * Set score as an index
      *
-     * @param float   $scoreIndex   The result expressed as a numeric index
+     * @param float  $scoreIndex  The result expressed as a numeric index
      */
     public function setScoreIndex(float $scoreIndex)
     {
@@ -95,8 +130,64 @@ class Affichage
         }
 
         $this->scoreIndex = $scoreIndex;
-        
+
+        return $this;        
     }
+
+    /**
+     * Set format
+     *
+     * @param string  $format  The format of label
+     */
+    public function setFormat(string $format)
+    {
+        $format = strtolower($format);
+        
+        if (!in_array($format, self::FORMATS)) {
+            throw new Exception('This is not a valid format. Allowed values are: '.implode(', ', self::FORMATS));
+        }
+
+        $this->format = $format;
+        
+        return $this;
+    }
+
+    /**
+     * Set variant
+     *
+     * @param string  $variant  The variant of label
+     */
+    public function setVariant(string $variant)
+    {
+        $variant = strtolower($variant);
+        
+        if (!in_array($variant, self::VARIANTS)) {
+            throw new \Exception('This is not a valid variant. Allowed values are: '.implode(', ', self::VARIANTS));
+        }
+
+        $this->variant = $variant;
+        
+        return $this;
+    }
+
+    /**
+     * Set label height
+     *
+     * @param int  $labelHeight  The label height expressed in px
+     */
+    public function setLabelHeight(int $labelHeight)
+    {
+        if (!is_int($labelHeight)) {
+            throw new Exception('This is not a valid height. The height must be an integer value.');
+        }
+
+        $this->labelHeight = $labelHeight;
+
+        return $this;        
+    }
+
+    // ------------------------------------------------------------------------
+    // GETTERS
 
     /**
      * Get score as a letter
@@ -109,9 +200,33 @@ class Affichage
     /**
      * Get score as an index
      */
-    public function scoreIndex(): string
+    public function scoreIndex(): float
     {
         return $this->scoreIndex;
+    }
+
+    /**
+     * Get variant
+     */
+    public function variant(): string
+    {
+        return $this->variant;
+    }
+
+    /**
+     * Get format
+     */
+    public function format(): string
+    {
+        return $this->format;
+    }
+
+    /**
+     * Get label height
+     */
+    public function labelHeight(): int
+    {
+        return $this->labelHeight;
     }
 
 }

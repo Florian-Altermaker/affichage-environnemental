@@ -1,6 +1,6 @@
 <svg
-    width="<?= $height*0.94 ?>px"
-    height="<?= $height*0.94 ?>px"
+    width="<?= $planetSize ?>px"
+    height="<?= $planetSize ?>px"
     viewBox="0 0 706.10675 706.10675"
     version="1.1"
     id="svg5"
