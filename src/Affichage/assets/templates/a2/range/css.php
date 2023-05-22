@@ -70,8 +70,8 @@
     background-color: #106192;
     width: 100%;
     height: <?= $this->labelHeight*0.64 ?>px;
-    border-radius: <?= $this->labelHeight/9 ?>px;
+    border-radius: <?= $this->labelHeight/7 ?>px;
     position: relative;
     z-index: -1;
-    bottom: <?= $this->labelHeight*0.6 ?>px;
+    bottom: <?= $this->labelHeight*0.59 ?>px;
 }

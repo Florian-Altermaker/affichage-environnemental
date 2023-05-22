@@ -39,19 +39,18 @@
     width: <?= $this->labelHeight*0.94 ?>px;
     min-width: <?= $this->labelHeight*0.94 ?>px;
     max-width: <?= $this->labelHeight*0.94 ?>px;
-    margin-left: <?= $this->labelHeight*0.11 ?>px;
+    margin-left: <?= $this->labelHeight*0.1 ?>px;
     position: relative;
     z-index: 1;
 }
 
 .a3-letter .label .info div:last-of-type {
     flex-grow: 1;
-
     color: white;
     font-family: 'Roboto', arial, sans-serif;
     font-weight: bold;
     font-size: <?= $this->labelHeight*0.51 ?>px;
-    line-height: 0.9em;
+    line-height: 0.95em;
     position: relative;
     text-align: left;
     z-index: 1;

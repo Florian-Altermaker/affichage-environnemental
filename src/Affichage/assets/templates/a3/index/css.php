@@ -39,7 +39,7 @@
     width: <?= $this->labelHeight*0.94 ?>px;
     min-width: <?= $this->labelHeight*0.94 ?>px;
     max-width: <?= $this->labelHeight*0.94 ?>px;
-    margin-left: <?= $this->labelHeight*0.11 ?>px;
+    margin-left: <?= $this->labelHeight*0.1 ?>px;
     position: relative;
     z-index: 1;
 }

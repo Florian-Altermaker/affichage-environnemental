@@ -31,7 +31,7 @@
     height: <?= $this->labelHeight*0.94 ?>px;
     position: relative;
     z-index: 1;
-    padding-left: <?= $this->labelHeight*0.12 ?>px;
+    padding-left: <?= $this->labelHeight*0.1 ?>px;
     align-items: flex-end;
 }
 
@@ -65,7 +65,7 @@
     font-size: <?= $this->labelHeight*0.21 ?>px;
     color: white;
     height: <?= $this->labelHeight*0.59 ?>px;
-    padding: <?= $this->labelHeight/20 ?>px 0px 0px;
+    padding: <?= $this->labelHeight/23 ?>px 0px 0px;
     box-sizing: border-box;
     text-align: left;
     position: relative;

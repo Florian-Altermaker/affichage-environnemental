@@ -30,7 +30,7 @@
     height: <?= $this->labelHeight*0.94 ?>px;
     position: relative;
     z-index: 1;
-    padding-left: <?= $this->labelHeight*0.12 ?>px;
+    padding-left: <?= $this->labelHeight*0.1 ?>px;
     align-items: flex-end;
 }
 

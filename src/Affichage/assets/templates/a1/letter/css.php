@@ -42,7 +42,7 @@
     font-family: 'Roboto', arial, sans-serif;
     font-weight: bold;
     font-size: <?= $this->labelHeight*0.45 ?>px;
-    line-height: 0.9em;
+    line-height: 0.95em;
     position: relative;
     text-align: left;
     z-index: 1;
