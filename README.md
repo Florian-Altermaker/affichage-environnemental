@@ -34,7 +34,13 @@ Comme détaillé dans la [charte graphique](doc/Charte_graphique_detaillee_(FR).
 
 Par défaut, l'affichage généré est au format "réglette", en variante "a3", son indice est à zéro, sa lettre est E et la hauteur du visuel généré est 100px.
 
-> La charte graphique indique que la police d'écriture à utiliser est Roboto. L'emplacement du fichier de police au format true-type est à déclarer avec la méthode statique setPathToRoboto(). Par défaut, c'est la police Arial qui s'applique ou un sans-serif par défaut si Arial n'est pas disponible.
+> ⚠ La charte graphique indique que la police d'écriture à utiliser est Roboto. L'emplacement du fichier de police au format true-type est à déclarer avec la méthode statique setPathToRoboto(). Par défaut, c'est la police Arial qui s'applique ou un sans-serif par défaut si Arial n'est pas disponible.
+
+```php
+<?php
+
+Affichage::setPathToRoboto('assets/css/Roboto-Medium.ttf');
+```
 
 ### Définir le score
 
