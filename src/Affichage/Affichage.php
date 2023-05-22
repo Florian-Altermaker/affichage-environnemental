@@ -72,6 +72,11 @@ class Affichage
      */
     protected int $labelHeight = 100;
 
+    /**
+     * Roboto font file path
+     */
+    public static string $pathToRoboto = '';
+
     // ------------------------------------------------------------------------
     // METHODS
 
@@ -117,7 +122,7 @@ class Affichage
         $scoreLetter = strtoupper($scoreLetter);
         
         if (!in_array($scoreLetter, self::LETTERS)) {
-            throw new Exception('This is not a valid score as a letter. Allowed values are: '.implode(', ', self::LETTERS));
+            throw new \Exception('This is not a valid score as a letter. Allowed values are: '.implode(', ', self::LETTERS));
         }
 
         $this->scoreLetter = $scoreLetter;
@@ -133,7 +138,7 @@ class Affichage
     public function setScoreIndex($scoreIndex)
     {
         if (!is_numeric($scoreIndex)) {
-            throw new Exception('This is not a valid score as an index. The index must be numeric.');
+            throw new \Exception('This is not a valid score as an index. The index must be numeric.');
         }
 
         $this->scoreIndex = !is_int($scoreIndex) ? number_format($scoreIndex, 1, ',', '') : number_format($scoreIndex, 0, ',', '');
@@ -151,7 +156,7 @@ class Affichage
         $format = strtolower($format);
         
         if (!in_array($format, self::FORMATS)) {
-            throw new Exception('This is not a valid format. Allowed values are: '.implode(', ', self::FORMATS));
+            throw new \Exception('This is not a valid format. Allowed values are: '.implode(', ', self::FORMATS));
         }
 
         $this->format = $format;
@@ -185,12 +190,28 @@ class Affichage
     public function setLabelHeight(int $labelHeight)
     {
         if (!is_int($labelHeight)) {
-            throw new Exception('This is not a valid height. The height must be an integer value.');
+            throw new \Exception('This is not a valid height. The height must be an integer value.');
         }
 
         $this->labelHeight = $labelHeight;
 
         return $this;        
+    }
+
+    /**
+     * Set path to Roboto
+     * 
+     * @param string  $pathToRoboto  The path to Roboto true-type file
+     */
+    public static function setPathToRoboto(string $pathToRoboto)
+    {
+        if (!is_string($pathToRoboto)) {
+            throw new \Exception('Path to Roboto must be a string.');
+        }
+
+        self::$pathToRoboto = $pathToRoboto;
+
+        return new static;
     }
 
     // ------------------------------------------------------------------------

@@ -17,6 +17,9 @@ $ composer require altermaker/affichage
 
 use Altermaker\Affichage\Affichage;
 
+// Déclarer l'emplacement de la police d'écriture Roboto (obligatoire) dans votre code
+Affichage::setPathToRoboto('assets/css/Roboto-Medium.ttf');
+
 // Générer un affichage pour le score "B"
 $affichage = new Affichage();
 $affichage->setScoreLetter('B');
@@ -30,6 +33,8 @@ Comme détaillé dans la [charte graphique](doc/Charte_graphique_detaillee_(FR).
 ### Configuration par défaut
 
 Par défaut, l'affichage généré est au format "réglette", en variante "a3", son indice est à zéro, sa lettre est E et la hauteur du visuel généré est 100px.
+
+> La charte graphique indique que la police d'écriture à utiliser est Roboto. L'emplacement du fichier de police au format true-type est à déclarer avec la méthode statique setPathToRoboto(). Par défaut, c'est la police Arial qui s'applique ou un sans-serif par défaut si Arial n'est pas disponible.
 
 ### Définir le score
 
@@ -101,7 +106,7 @@ Si besoin, il est aussi possible de récupérer le contenu généré en HTML dan
 $affichage->htmlLabel();
 ```
 
-## Exemple
+## Exemple complet
 
 Le code ci-dessous affichera un visuel de 200px de hauteur suivant les règles de la variante A1 au format "Lettre" pour un score déclaré de "A".
 
@@ -109,6 +114,8 @@ Le code ci-dessous affichera un visuel de 200px de hauteur suivant les règles d
 <?php
 
 use Altermaker\Affichage\Affichage;
+
+Affichage::setPathToRoboto('assets/css/Roboto-Medium.ttf');
 
 $affichage = new Affichage();
 $affichage->setVariant('a1')->setFormat('letter')->setLabelHeight(200)->setScoreLetter('A')->printLabel();

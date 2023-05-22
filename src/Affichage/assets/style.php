@@ -2,7 +2,7 @@
 
     @font-face {
         font-family: 'Roboto';
-        src: url('assets/css/Roboto-Medium.ttf') format('truetype');
+        src: url('<?= self::$pathToRoboto ?>') format('truetype');
     }
 
     .affichage-html {
