@@ -36,6 +36,8 @@ Par défaut, l'affichage généré est au format "réglette", en variante "a3", 
 
 > ⚠ La charte graphique indique que la police d'écriture à utiliser est Roboto. L'emplacement du fichier de police au format true-type est à déclarer avec la méthode statique setPathToRoboto(). Par défaut, c'est la police Arial qui s'applique ou un sans-serif par défaut si Arial n'est pas disponible.
 
+Utilisez le fichier [Roboto-Medium.ttf](doc/Roboto-Medium.ttf) et déclarez son emplacement.
+
 ```php
 <?php
 
