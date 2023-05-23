@@ -10,6 +10,7 @@
         box-sizing: content-box;
         padding: <?= $this->labelHeight/6 ?>px;
         text-align: left;
+        font-size: 0;
     }
 
     <?php include('templates/'.$this->variant.'/'.$this->format.'/css.php'); ?>
