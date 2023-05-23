@@ -9,6 +9,7 @@
         overflow: hidden;
         box-sizing: content-box;
         padding: <?= $this->labelHeight/6 ?>px;
+        text-align: left;
     }
 
     <?php include('templates/'.$this->variant.'/'.$this->format.'/css.php'); ?>
